@@ -35,16 +35,43 @@ namespace LeksikonTests.Helpers
             return response;
         }
 
-        public int GetNumberOfIngredients(IRestResponse response)
+        public IRestResponse GetAllGuides()
+        {
+            var request = Get(ConfigurationManager.AppSettings["Guides"]);
+            IRestResponse response = Client.Execute(request);
+            return response;
+        }
+
+        public IRestResponse GetAllInstructions()
+        {
+            var request = Get(ConfigurationManager.AppSettings["Instructions"]);
+            IRestResponse response = Client.Execute(request);
+            return response;
+        }
+
+        public IRestResponse GetAllTechniques()
+        {
+            var request = Get(ConfigurationManager.AppSettings["Techniques"]);
+            IRestResponse response = Client.Execute(request);
+            return response;
+        }
+
+        public int GetNumberOfItems(IRestResponse response)
         {
             JArray objects = JsonConvert.DeserializeObject<JArray>(response.Content);
             return objects.Count;
         }
 
-        public int GetIngredientsNumber()
+        public int GetItemsNumberFromApi()
         {
-            int n= GetNumberOfIngredients(GetAllIngredients());
-            return n;
+            //return GetNumberOfItems(GetAllIngredients()) + GetNumberOfItems(GetAllGuides()) + GetNumberOfItems(GetAllInstructions()) + GetNumberOfItems(GetAllTechniques());
+            int a = GetNumberOfItems(GetAllIngredients());
+            int b = GetNumberOfItems(GetAllGuides());
+            int c = GetNumberOfItems(GetAllInstructions());
+            int d = GetNumberOfItems(GetAllTechniques());
+            return a + b + c + d;
         }
+
+
     }
 }

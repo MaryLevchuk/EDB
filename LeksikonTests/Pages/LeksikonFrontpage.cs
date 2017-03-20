@@ -16,6 +16,10 @@ namespace LeksikonTests.Pages
 
         [FindsBy(How = How.ClassName, Using = "encyclopedia__ingredients__list-item")]
         private IList<IWebElement> Items;
+
+        [FindsBy(How = How.CssSelector, Using = ".encyclopedia__ingredients")]
+        private IList<IWebElement> Ingredients;
+        
         //private IWebElement Item;
 
         public LeksikonFrontpage(IWebDriver driver)
@@ -26,8 +30,9 @@ namespace LeksikonTests.Pages
 
         public int GetNumberOfItems()
         {
-            return Items.Count;
-            
+            //return Items.Count;
+            int n = Ingredients.Count;
+            return n;
 
         }
     }

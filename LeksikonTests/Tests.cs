@@ -30,10 +30,8 @@ namespace LeksikonTests
         public void SiteItemsNumber_ShouldMatch_ItemsNumberFromApi()
         {
             int websiteItems = Frontpage.GetNumberOfItems();
-            int n = Client.GetIngredientsNumber();
-            Console.WriteLine(n.ToString());
-            //Assert;
-            true.Should().BeTrue();
+            int apiItems = Client.GetItemsNumberFromApi();
+            websiteItems.Should().Be(apiItems);
         }
     }
 }
