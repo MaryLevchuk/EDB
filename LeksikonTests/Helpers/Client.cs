@@ -16,6 +16,11 @@ namespace LeksikonTests.Helpers
         public IRestRequest Request = new RestRequest();
         public string Url;
 
+        public int IngredientsNumber = 0;
+        public int InstructionsNumber = 0;
+        public int TechniquesNumber = 0;
+        public int GuidesNumber = 0;
+
         public ClientRequest()
         {
             Request.AddHeader("Accept", "application/json");
@@ -62,16 +67,12 @@ namespace LeksikonTests.Helpers
             return objects.Count;
         }
 
-        public int GetItemsNumberFromApi()
+        public void GetItemsNumber()
         {
-            //return GetNumberOfItems(GetAllIngredients()) + GetNumberOfItems(GetAllGuides()) + GetNumberOfItems(GetAllInstructions()) + GetNumberOfItems(GetAllTechniques());
-            int a = GetNumberOfItems(GetAllIngredients());
-            int b = GetNumberOfItems(GetAllGuides());
-            int c = GetNumberOfItems(GetAllInstructions());
-            int d = GetNumberOfItems(GetAllTechniques());
-            return a + b + c + d;
+            IngredientsNumber = GetNumberOfItems(GetAllIngredients());
+            GuidesNumber = GetNumberOfItems(GetAllGuides());
+            InstructionsNumber = GetNumberOfItems(GetAllInstructions());
+            TechniquesNumber = GetNumberOfItems(GetAllTechniques());
         }
-
-
     }
 }

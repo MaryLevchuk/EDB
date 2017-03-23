@@ -16,22 +16,39 @@ namespace LeksikonTests
     public class Tests : TestSetup
     {
        public LeksikonFrontpage Frontpage;
-       public ClientRequest Client = new ClientRequest();
+       public ClientRequest Api = new ClientRequest();
 
         public Tests()
         {
             OpenBrowser();
             OpenPage(ConfigurationManager.AppSettings["FrontpageUrl"]);
             Frontpage = new LeksikonFrontpage(Driver);
-            
+            Frontpage.GetNumberOfItems();
+            Api.GetItemsNumber();
         }
 
         [Test]
-        public void SiteItemsNumber_ShouldMatch_ItemsNumberFromApi()
+        public void SiteIngredientsNumber_ShouldMatch_IngredientsNumberFromApi()
         {
-            int websiteItems = Frontpage.GetNumberOfItems();
-            int apiItems = Client.GetItemsNumberFromApi();
-            websiteItems.Should().Be(apiItems);
+            Frontpage.IngredientsNumber.Should().Be(Api.IngredientsNumber);
+        }
+
+        [Test]
+        public void SiteInstructionsNumber_ShouldMatch_InstructionsNumberFromApi()
+        {
+            Frontpage.InstructionsNumber.Should().Be(Api.InstructionsNumber);
+        }
+
+        [Test]
+        public void SiteTechniquesNumber_ShouldMatch_TechniquesNumberFromApi()
+        {
+            Frontpage.TechniquesNumber.Should().Be(Api.TechniquesNumber);
+        }
+
+        [Test]
+        public void SiteGuidesNumber_ShouldMatch_GuidesNumberFromApi()
+        {
+            Frontpage.GuidesNumber.Should().Be(Api.GuidesNumber);
         }
     }
 }
