@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 
-namespace LeksikonTests.Helpers
+namespace Tests.Helpers
 {
     public class ClientRequest
     {

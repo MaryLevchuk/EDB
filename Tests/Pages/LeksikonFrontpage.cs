@@ -10,7 +10,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace LeksikonTests.Pages
+namespace Tests.Pages
 {
     public class LeksikonFrontpage
     {

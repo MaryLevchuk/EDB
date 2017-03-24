@@ -5,13 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
-using LeksikonTests.Helpers;
-using LeksikonTests.Pages;
 using NUnit.Framework;
+using Tests.Helpers;
+using Tests.Pages;
 
 
-
-namespace LeksikonTests
+namespace Tests
 {
     public class Tests : TestSetup
     {

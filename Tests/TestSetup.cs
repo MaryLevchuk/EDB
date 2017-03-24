@@ -7,7 +7,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace LeksikonTests
+namespace Tests
 {
     public abstract class TestSetup
     {

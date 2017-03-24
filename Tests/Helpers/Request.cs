@@ -9,7 +9,7 @@ using RestSharp.Serializers;
 using RestRequest = RestSharp.RestRequest;
 
 
-namespace LeksikonTests.Helpers
+namespace Tests.Helpers
 {
     class Request
     {
