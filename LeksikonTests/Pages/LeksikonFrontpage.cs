@@ -16,9 +16,6 @@ namespace LeksikonTests.Pages
     {
         private IWebDriver _driver;
 
-        //[FindsBy(How = How.ClassName, Using = "encyclopedia__ingredients__list-item")]
-        //private IList<IWebElement> Items;
-
         [FindsBy(How = How.CssSelector, Using = ".encyclopedia__ingredients ul li")]
         private IList<IWebElement> Ingredients;
 
